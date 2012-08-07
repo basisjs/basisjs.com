@@ -1,0 +1,156 @@
+<!doctype html>
+
+<html>
+<head>
+  <title>Basis.js</title>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <script basis-config="" src="basis/src/basis.js"></script>
+  <script>
+    basis.require('basis.ui');
+  </script>
+
+  <style>
+    @font-face { font-family: jellyka; src: url('font/jellyka.ttf'); }
+    @font-face { font-family: tusj; src: url('font/tusj.ttf'); }
+    HTML
+    {
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      background: #F8F8F8 url(img/bg.gif);
+      color: black;
+      font-size: small;
+      font-family: georgia, Consolas, Couries, monospace;
+    }
+    BODY
+    {
+      padding: 0;
+      margin: 0;
+      min-height: 100%;
+    }
+
+    .block
+    {
+      width: 240px;
+      height: 140px;
+      padding: 20px;
+      position: absolute;
+    }
+    .block H2
+    {
+      margin: 0;
+      text-shadow: 1px 1px rgba(255, 255, 255,.5);
+      /*font-family: Jellyka;
+      font-size: 700%;
+      line-height: 1em;
+      font-weight: normal;*/
+    }
+
+    H1
+    {
+      left: 285px;
+      position: absolute;
+      bottom: 100%;
+      font-weight: normal;
+      font-size: 100%;
+      border-bottom: 5px solid #B0B0B0;
+      margin: 0 0 5px;
+      right: -285px;
+    }
+    H1 SPAN.t1
+    {
+      font-family: Jellyka;
+      font-size: 16em;
+      position: absolute;
+      bottom: -92px;
+      margin-left: 5px;
+    }
+    H1 SPAN.t2
+    {
+      color: #301800;
+      font-family: tusj;
+      font-size: 5.7em;
+      position: absolute;
+      bottom: -10px;
+      margin-left: 5px;
+    }
+    .t1 { display: none }
+
+
+    #source
+    {
+      top: -185px;
+      left: -285px;
+
+      background: orange;
+    }
+    #howto
+    {
+      top: -185px;
+      left: -0px;
+
+      background: #38AA20;
+    }
+    #demo
+    {
+      top: 0px;
+      left: -285px;
+      height: auto;
+
+      background: #E05018;
+    }
+    #page-wrapper
+    {
+      padding: 
+    }
+    #page
+    {
+      position: relative;
+      background: #E8E8E8;
+      width: 565px;
+      min-height: 350px;
+      margin: 190px auto 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="page-wrapper">
+    <div id="page">
+      <h1>
+        <span class="t1">basis.js</span>
+        <span class="t2">basis.js</span>
+      </h1>
+
+      <div id="source" class="block">
+        <h2>Getting started</h2>
+        <ul>
+          <li>Source
+          <li>Download
+        </ul>
+      </div>
+      <div id="howto" class="block">
+        <h2>How to</h2>
+        <ul>
+          <li>API Reference
+          <li>Tutorial
+          <li>Articles
+        </ul>
+      </div>
+      <div id="demo" class="block">
+        <h2>Take a look</h2>
+        <ul>
+          <li>Demos
+        </ul>
+
+        <div style="background-color: white;background-image: url(img/todo_logo.svg), url(img/todo_logo.png); background-size: 85%, 180px;background-position: center 10px, 120px 55px; background-repeat: no-repeat; height: 160px; margin: -10px">
+
+      </div>
+
+      <!-- content -->
+
+    </div>
+  </div>
+</body>
+
+</html>
