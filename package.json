@@ -1,0 +1,11 @@
+{
+  "name": "Basis site on heroku",
+  "version": "0.0.1",
+  "dependencies": {
+    "basis-devtools": "~0.0.20"
+  },
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
+  }
+}
