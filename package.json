@@ -1,8 +1,8 @@
 {
-  "name": "Basis site on heroku",
+  "name": "basis-site",
   "version": "0.0.1",
   "dependencies": {
-    "basis-devtools": "~0.0.20"
+    "basis-devtools": "0.0.x"
   },
   "engines": {
     "node": "0.8.x",
