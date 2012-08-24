@@ -3,7 +3,8 @@ var bt = require('basis-devtools');
 
 bt.server.command(null, {
   port: process.env.PORT || 8000,
-  ignore: ['.git', 'basis/.git']
+  ignore: ['.git', 'basis/.git'],
+  base: 'site'
 });
 /*bt.server.launch({
   port: process.env.PORT || 8000,
