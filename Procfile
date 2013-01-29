@@ -1,1 +1,1 @@
-web: node server.js --no-sync --no-dev
+web: node server.js
