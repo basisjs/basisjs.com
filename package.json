@@ -1,6 +1,6 @@
 {
-  "name": "basis-site",
-  "version": "0.0.1",
+  "name": "basisjs.com",
+  "version": "0.0.2",
   "dependencies": {
     "basisjs-tools": "0.0.x"
   },
