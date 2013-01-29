@@ -40,6 +40,26 @@
       margin: 0;
       text-shadow: 1px 1px rgba(255, 255, 255,.5);
     }
+    .block A
+    {
+      display: inline-block;
+      font-size: 300%;
+      text-decoration: none;
+      width:100%;
+      padding: 20px;
+      margin: -20px;
+      color: black;
+      text-shadow: 1px 1px 1px rgba(255,255,255,.5);
+      background-color: rgba(255,255,255,0);
+      -webkit-transition: background .2s;
+      -moz-transition: background .2s;
+      -o-transition: background .2s;
+      transition: background .2s;
+    }
+    .block A:hover
+    {
+      background-color: rgba(255,255,255,.35);
+    }
 
     H1
     {
@@ -81,7 +101,6 @@
     {
       top: 0px;
       left: -285px;
-      height: auto;
 
       background: rgba(224, 80, 24, .6);
     }
@@ -97,6 +116,12 @@
       min-height: 350px;
       margin: 190px auto 0;
     }
+
+    #content
+    {
+      padding: 20px;
+      font-size: 140%;
+    }
   </style>
 </head>
 
@@ -107,30 +132,26 @@
         <span>basis.js</span>
       </h1>
 
-      <div id="source" class="block">
-        <h2>Getting started</h2>
-        <ul>
-          <li>Source
-          <li>Download
-        </ul>
+      <div id="source" class="block" style="line-height: 140px; text-align: center">
+        <a href="https://github.com/basisjs/basisjs">Source</a>
       </div>
-      <div id="howto" class="block">
-        <h2>How to</h2>
-        <ul>
-          <li><a href="/basisjs/docs/">API Reference</a>
-          <li>Tutorial
-          <li>Articles
-        </ul>
+      <div id="howto" class="block" style="line-height: 140px; text-align: center">
+        <a href="basisjs/docs/">API</a>
       </div>
-      <div id="demo" class="block">
-        <h2>Take a look</h2>
+      <div id="demo" class="block" style="line-height: 140px; text-align: center">
         <!--<div style="background-color: white;background-image: url(img/todo_logo.svg), url(img/todo_logo.png); background-size: 85%, 180px;background-position: center 10px, 120px 55px; background-repeat: no-repeat; height: 160px; margin: 10px -10px"></div>-->
-
-        <a href="/basisjs/demo/">Demos...</a>
-
+        <a href="basisjs/demo/">Demos</a>
       </div>
 
-      <!-- content -->
+      <div id="content">
+        <p><a href="https://github.com/basisjs/basisjs">basis.js</a> - javascript framework for building single page applications.</p>
+        <p>At this moment, it's not just a framework, but also some tools for developers:</p>
+        <ul>
+          <li><a href="http://github.com/basisjs/basisjs-tools">basisjs-tools</a> - CLI based on node.js contains builder, dev web server and more. Visit project page for more details.</li>
+          <li><a href="https://chrome.google.com/webstore/detail/basisjs-tools/paeokpmlopbdaancddhdhmfepfhcbmek">chrome plugin</a> - a Google Chrome plugin, that maintains live editing app templates and translations.</li>
+        </ul>
+        <p>Site is under development, any help are welcome.</p>
+      </div>
 
     </div>
   </div>
