@@ -9,9 +9,6 @@ require('basisjs-tools').server.command(null, {
     'html.js'
   ],
   rewrite: {
-    '^/docs(/.*)?$': '/basisjs/docs/$1',
-    '^/demo(/.*)?$': '/basisjs/demo/$1',
-    '^/src(/.*)?$': '/basisjs/src/$1',      
-    '^/test(/.*)?$': '/basisjs/test/$1'      
+    '^/(docs|demo|src|test)(/.*)?$': '/basisjs/$1/$2'
   }
 });
