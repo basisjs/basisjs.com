@@ -8,8 +8,8 @@ exports.process = function(mime, data, fn, fres){
   {
     data = String(data).replace(/<\/body>/i, script + '</body>');
 
-    if (fres.rewritten)
-      data = data.replace(/<head>/i, '<head><base href="' + path.dirname(path.normalize(fn)) + '/">');
+    //if (fres.rewritten)
+    //  data = data.replace(/<head>/i, '<head><base href="' + path.dirname(path.normalize(fn)) + '/">');
 
     return data;
   }
