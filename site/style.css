@@ -126,6 +126,7 @@ H1 SPAN
   bottom: 0;
   left: 0;
   width: 100%;
+  min-width: 1145px;
   padding: .5em 0;
 }
 #copy
