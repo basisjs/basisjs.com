@@ -1,8 +1,8 @@
 {
   "name": "basisjs.com",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "dependencies": {
-    "basisjs-tools": "0.0.x"
+    "basisjs-tools": "1.0.0"
   },
   "engines": {
     "node": "0.8.x",
