@@ -4,7 +4,7 @@ var path = require('path');
 var script = fs.readFileSync('./google-analytics.script', 'utf-8');
 
 exports.process = function(mime, data, fn, fres){
-  if (mime == 'text/html')
+  if (mime == 'text/html' && !/launcher\.html/.test(fn))
   {
     data = String(data).replace(/<\/body>/i, script + '</body>');
 
