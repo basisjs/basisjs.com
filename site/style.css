@@ -142,3 +142,20 @@ H1 SPAN
   position: relative;
   left: -285px;
 }
+
+.templates
+{
+  display: block; text-decoration: none;position: absolute; left: 570px; top: 0;background: #990000; color: white; padding: 16px; line-height: 1; font-size: 70%; font-family: tahoma
+}
+.templates *
+{
+  margin: 0;
+}
+.templates H2
+{
+  margin-bottom: .8em;
+}
+.templates:hover
+{
+  background: #AA0000;
+}
