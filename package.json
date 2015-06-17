@@ -2,7 +2,8 @@
   "name": "basisjs.com",
   "version": "0.1.0",
   "dependencies": {
-    "basisjs-tools": "1.0.8"
+    "basisjs-tools": "1.0.8",
+    "yatra": "~1.0.0"
   },
   "engines": {
     "node": "0.10.x",
