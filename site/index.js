@@ -5,6 +5,7 @@ var Viewer = require('./basisjs/tour/src/slide/viewer/index.js');
 basis.ready(function() {
     new Viewer({
         container: document.getElementById('demo1'),
+        mode: 'horizontal',
         data: {
             files: new Dataset({
                 items: [

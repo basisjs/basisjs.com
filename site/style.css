@@ -2,18 +2,15 @@ HTML
 {
   padding: 0;
   margin: 0;
-  background: #F8F8F8 url(img/bg.gif);
+  background: #F8F8F8;
   color: #4C4C4C;
-  font-size: small;
-  font-family: georgia, Consolas, Couries, monospace;
+  font-size: 16px;
+  font-family: Helvetica, Consolas, Couries, monospace;
 }
 BODY
 {
   padding: 0;
   margin: 0;
-  min-height: 100%;
-  padding-bottom: 4em;
-  position: relative;
 }
 
 A
@@ -21,148 +18,98 @@ A
   color: #4183c4;
 }
 
-.block
+.section-wrapper
 {
-  width: 240px;
-  height: 140px;
-  padding: 20px;
-  position: absolute;
-  line-height: 140px;
-  text-align: center;
-}
-.block H2
-{
-  margin: 0;
-  text-shadow: 1px 1px rgba(255, 255, 255,.5);
-}
-.block A
-{
-  display: inline-block;
-  font-size: 300%;
-  text-decoration: none;
-  width:100%;
-  padding: 20px;
-  margin: -20px;
-  color: black;
-  text-shadow: 1px 1px 1px rgba(255,255,255,.5);
-  background-color: rgba(255,255,255,0);
-  -webkit-transition: background .2s;
-  -moz-transition: background .2s;
-  -o-transition: background .2s;
-  transition: background .2s;
-}
-.block A:hover
-{
-  background-color: rgba(255,255,255,.35);
+  max-width: 1000px;
+  min-width: 800px;
+  margin: 0 auto;
 }
 
-H1
+.main-menu
 {
-  position: absolute;
-  left: 285px;
-  bottom: 100%;
-  right: -285px;
-  font-weight: normal;
-  font-size: 100%;
-  border-bottom: 5px solid #B0B0B0;
-  margin: 0 0 5px;
-}
-H1 SPAN
-{
-  display: block;
-  width: 276px;
-  height: 76px;
-  background: url(img/logo.png) no-repeat;
-  margin-bottom: -9px;
-  text-indent: -1000px;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #333;
+  box-shadow: 0 0 24px rgba(0, 0, 0, .5);
   overflow: hidden;
 }
-
-#source
+.main-menu UL
 {
-  top: -185px;
-  left: -285px;
-
-  background: rgba(255, 165, 0, .5);
-}
-#howto
-{
-  top: 185px;
-  left: -285px;
-
-  background: rgba(224, 80, 24, .6);
-}
-#demo
-{
-  top: 0px;
-  left: -285px;
-
-  background: rgba(56, 170, 32, .6);
-}
-#blog
-{
-  top: -185px;
-  left: -0px;
-
-  background: rgba(24, 80, 224, .6);
-}
-#page-wrapper
-{
-  min-width: 1145px;
-}
-#page
-{
-  position: relative;
-  background: #E8E8E8;
-  width: 565px;
-  min-height: 350px;
-  margin: 190px auto 0;
-}
-
-#content
-{
-  padding: 20px;
-  font-size: 140%;
-  min-height: 325px;
-}
-
-#footer
-{
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  min-width: 1145px;
-  padding: .5em 0;
-}
-#copy
-{
-  margin: 0 auto;
-  width: 565px;
-  position: relative;
-  left: -285px;
-}
-
-.templates
-{
-  display: block; text-decoration: none;position: absolute; left: 570px; top: 0;background: #990000; color: white; padding: 16px; line-height: 1; font-size: 70%; font-family: tahoma
-}
-.templates *
-{
+  list-style: none;
   margin: 0;
+  padding: 0;
+  font-size: 16px;
 }
-.templates H2
+.main-menu UL.primary
 {
-  margin-bottom: .8em;
+  float: left;
 }
-.templates:hover
+.main-menu UL.secondary
 {
-  background: #AA0000;
+  float: right;
+}
+.main-menu LI
+{
+  display: inline-block;
+}
+.main-menu A
+{
+  display: inline-block;
+  color: #DDD;
+  text-decoration: none;
+  padding: 16px 12px;
+}
+.main-menu LI:first-child A
+{
+  padding-left: 24px;
+}
+.main-menu LI:last-child A
+{
+  padding-right: 24px;
+}
+.main-menu A:hover
+{
+  color: white;
+}
+
+.header
+{
+  background: url(img/bg.jpg);
+  box-shadow: 0 0 16px 0px rgba(0, 0, 0, .25) inset;
+  margin: 0 -30px;
+  text-align: center;
+}
+.header .logo
+{
+  padding: 140px 0 80px;
+}
+.header .logo P
+{
+  margin: 16px 0 0;
+  font-size: 18px;
+}
+
+.content
+{
+  padding-top: 20px;
+}
+.demo-block
+{
+
+}
+
+.footer
+{
+  text-align: center;
+  font-size: 12px;
+  padding: 40px 0 10px;
 }
 
 #demo1
 {
   position: relative;
-  height: 500px;
-  position: relative;
+  height: 250px;
 }
