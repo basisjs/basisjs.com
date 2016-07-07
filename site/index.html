@@ -51,10 +51,168 @@
 
   <div class="content">
     <div class="section-wrapper">
+      <!-- <div class="features">
+        <div class="feature">
+          <h3>Feature</h3>
+          <p>Text</p>
+        </div>
+        <div class="feature">
+          <h3>Feature</h3>
+          <p>Text</p>
+        </div>
+        <div class="feature">
+          <h3>Feature</h3>
+          <p>Text</p>
+        </div>
+      </div> -->
+
       <div class="demo-block">
         <h2>Hello world</h2>
-        <p>Description goes here</p>
-        <div id="demo1"></div>
+        <p>Basis.js uses DOM concept to build interface. Each view or component and their parts is a UI node which has a xhtml-like template with markup.</p>
+        <p>Here is the simplest app that adds single UI node to document body. Note that you can modify the source code of example and see the effect at the right.</p>
+        <div class="demo" style="height: 155px">
+          <script type="file" data-filename="app.js">
+            var Node = require('basis.ui').Node;
+
+            new Node({
+              container: document.body,
+              template: '<h1>Hello world!</h1>'
+            });
+          </script>
+        </div>
+      </div>
+
+      <div class="demo-block">
+        <h2>Loose coupling</h2>
+        <p>Usually templates store outside of JavaScript in separate files. View knows nothing about its markup. Template nothing know about component using it.</p>
+        <p>UI nodes provides a value list they can compute (bindings) and a command list they can handle (actions). Templates use values and link DOM events with actions.</p>
+        <div class="demo" style="height: 365px">
+          <script type="file" data-filename="app.js">
+            var Node = require('basis.ui').Node;
+
+            new Node({
+              container: document.body,
+              template: resource('./app.tmpl'),
+              binding: {
+                name: 'data:name'
+              },
+              action: {
+                input: function(e) {
+                  this.update({ name: e.sender.value });
+                }
+              },
+              data: {
+                name: ''
+              }
+            });
+          </script>
+          <script type="file" data-filename="app.tmpl">
+            <div>
+              <input type="text" event-input="input"/>
+              <div>Hello {name}!</div>
+            </div>
+          </script>
+        </div>
+      </div>
+
+      <div class="demo-block">
+        <h2>Simple ToDo app</h2>
+        <p>Data abstractions like Object (model) and Dataset (collection) helps avoid direct node hierarchy transformation and build user interface according to data and its state.</p>
+        <p>Moving markup outside JavaScript makes it clean. Also templates in separate files can include other templates and styles by relative paths, can <b>isolate CSS styles</b> out of the box (look at app's DOM – all CSS classes are prefixed), and support <b>live update</b> for templates and styles (try to change <span>*.tmpl</span> or <span>*.css</span> files).</p>
+        <div class="demo" style="height: 765px">
+          <script type="file" data-filename="app.js">
+            var Node = require('basis.ui').Node;
+            var Todo = require('basis.entity').createType('Todo', {
+              title: String,
+              complete: Boolean
+            });
+
+            Todo.all.set([
+              { title: 'Write a framework', complete: true },
+              { title: 'Conquer the world!' }
+            ]);
+
+            new Node({
+              container: document.body,
+              template: resource('./app.tmpl'),
+              action: {
+                create: function(e) {
+                  // create new todo
+                  Todo({ title: this.tmpl.input.value.trim() });
+                  // reset input & kill event
+                  this.tmpl.input.value = '';
+                  e.die();
+                }
+              },
+
+              dataSource: Todo.all,
+              childClass: {
+                template: resource('./todo.tmpl'),
+                binding: {
+                  title: 'data:',
+                  complete: 'data:'
+                },
+                action: {
+                  toggleComplete: function() {
+                    this.update({ complete: !this.data.complete });
+                  }
+                }
+              }
+            });
+          </script>
+          <script type="file" data-filename="app.tmpl">
+            <b:isolate/>
+            <b:style src="./app.css"/>
+
+            <div class="app">
+              <form class="form" event-submit="create">
+                <input{input} class="input" placeholder="What needs to be done?"/>
+              </form>
+              <!--{childNodesHere}-->
+            </div>
+          </script>
+          <script type="file" data-filename="app.css">
+            .form {
+              margin: 0;
+              padding: 0;
+            }
+            .input {
+              width: 100%;
+              padding: 8px 6px;
+              box-sizing: border-box;
+              border: 1px solid #aaa;
+              border-radius: 3px;
+            }
+          </script>
+          <script type="file" data-filename="todo.tmpl">
+            <b:isolate/>
+            <b:style src="./todo.css"/>
+            <b:define name="complete" type="bool"/>
+
+            <div class="item" event-click="toggleComplete">
+              <input type="checkbox" checked="{complete}"/>
+              <span class="title title_{complete}">{title}</span>
+            </div>
+          </script>
+          <script type="file" data-filename="todo.css">
+            .item {
+              cursor: pointer;
+              padding: 8px 0;
+              border-bottom: 1px solid #ccc;
+            }
+            .item:hover {
+              background: #eee;
+            }
+            .title {
+              display: inline-block;
+              margin-left: 4px;
+            }
+            .title_complete {
+              color: #aaa;
+              text-decoration: line-through;
+            }
+          </script>
+        </div>
       </div>
     </div>
   </div>

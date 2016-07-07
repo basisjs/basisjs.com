@@ -2,8 +2,7 @@ HTML
 {
   padding: 0;
   margin: 0;
-  background: #F8F8F8;
-  color: #4C4C4C;
+  background: #eee;
   font-size: 16px;
   font-family: Helvetica, Consolas, Couries, monospace;
 }
@@ -96,9 +95,37 @@ A
 {
   padding-top: 20px;
 }
+.content H2
+{
+  font-size: 28px;
+  font-weight: normal;
+  margin: 2em 0 .75em;
+}
+
+.features
+{
+  display: flex;
+}
+.feature
+{
+  width: 33%;
+  padding: 0 15px;
+  text-align: center;
+}
+.feature H3
+{
+  font-size: 24px;
+  font-weight: normal;
+  margin: 0 0 16px;
+}
+
 .demo-block
 {
 
+}
+.demo-block P
+{
+  width: 55%;
 }
 
 .footer
