@@ -1,6 +1,13 @@
+var Value = require('basis.data').Value;
 var DataObject = require('basis.data').Object;
 var Dataset = require('basis.data').Dataset;
+var Node = require('basis.ui').Node;
 var Viewer = require('./basisjs/tour/src/slide/viewer/index.js');
+var Editor = require('./basisjs/tour/src/slide/viewer/editor/index.js');
+var Flow = require('./basisjs/src/devpanel/module/data-flow/index.js');
+var buildTree = Flow.createTreeBuilder({
+  sandbox: basis
+});
 
 function normalizeOffset(text){
     text = text
@@ -33,6 +40,21 @@ function normalizeOffset(text){
     return text;
 }
 
+function sourceToValue(source){
+    try {
+        var fn = new Function('exports,module,basis,global,__filename,__dirname,resource,require,asset', source);
+        var module = {
+          exports: {}
+        };
+
+        fn(module.exports, module, basis, global, '', '', resource, require, asset);
+
+        return module.exports;
+    } catch(e) {
+        console.error(e);
+    }
+}
+
 basis.ready(function() {
     basis.array(document.querySelectorAll('.demo')).forEach(function(demoEl){
         var files = new Dataset({
@@ -56,4 +78,31 @@ basis.ready(function() {
             }
         });
     });
+
+    basis.array(document.querySelectorAll('.data-flow')).forEach(function(demoEl){
+        new Node({
+            container: demoEl,
+            template: resource('./template/flow-demo.tmpl'),
+            binding: {
+                editor: new Editor({
+                    data: {
+                        filename: 'demo.js',
+                        content: normalizeOffset(demoEl.getElementsByTagName('script')[0].innerHTML)
+                    }
+                }),
+                flow: new Flow({
+                    init: function(){
+                        Flow.prototype.init.call(this);
+                        Value
+                            .query(this, 'owner.satellite.editor.data.content')
+                            .as(sourceToValue)
+                            .as(buildTree)
+                            .link(this, this.setChildNodes);
+                    }
+                })
+            }
+        });
+    });
 });
+
+

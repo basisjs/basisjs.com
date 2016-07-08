@@ -214,6 +214,29 @@
           </script>
         </div>
       </div>
+
+      <div class="demo-block">
+        <h2>Data flow</h2>
+        <p>Basis.js uses FRP concepts that simplify logic description and data synchronization. Doesn't matter how complicated you dependencies – frameworks tools can untwist reactive value dependency graph.</p>
+        <p>Try yourself – write some code and see how does it work under the hood.</p>
+        <div class="data-flow">
+          <script type="demo">
+            var Value = require('basis.data').Value;
+            var expression = require('basis.data.value').expression;
+            var cell = function(value){
+              return new Value({ value: value });
+            };
+
+            var a = cell(3).as(function(x){ return x * x + 1 });
+            var b = cell(2);
+            var sum = expression(a, b, function(a, b){
+              return a + b;
+            });
+
+            module.exports = sum;
+          </script>
+        </div>
+      </div>
     </div>
   </div>
 

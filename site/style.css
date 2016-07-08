@@ -78,7 +78,6 @@ A
 {
   background: url(img/bg.jpg);
   box-shadow: 0 0 16px 0px rgba(0, 0, 0, .25) inset;
-  margin: 0 -30px;
   text-align: center;
 }
 .header .logo
@@ -132,11 +131,5 @@ A
 {
   text-align: center;
   font-size: 12px;
-  padding: 40px 0 10px;
-}
-
-#demo1
-{
-  position: relative;
-  height: 250px;
+  padding: 40px 0 20px;
 }

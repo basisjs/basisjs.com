@@ -1,0 +1,21 @@
+.demo
+{
+  position: relative;
+  height: 400px;
+  display: flex;
+}
+.editor
+{
+  flex: 1;
+  position: relative;
+}
+.flow
+{
+  width: 40%;
+  margin-left: 5px;
+  background: white;
+  border-radius: 3px;
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 8px 12px;
+}
