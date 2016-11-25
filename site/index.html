@@ -11,7 +11,13 @@
   <link rel="canonical" href="http://basisjs.com/">
 
   <link rel="stylesheet" href="style.css">
-  <script src="basisjs/src/basis.js" basis-config="devpanel: false, autoload: 'index.js'"></script>
+  <script src="basisjs/src/basis.js" basis-config="
+    devpanel: false,
+    autoload: 'index.js',
+    modules: {
+      api: 'basisjs/src/devpanel/api/index.js'
+    }
+  "></script>
 </head>
 
 <body>

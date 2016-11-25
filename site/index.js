@@ -4,7 +4,7 @@ var Dataset = require('basis.data').Dataset;
 var Node = require('basis.ui').Node;
 var Viewer = require('./basisjs/tour/src/slide/viewer/index.js');
 var Editor = require('./basisjs/tour/src/slide/viewer/editor/index.js');
-var Flow = require('./basisjs/src/devpanel/module/data-flow/index.js');
+var Flow = require('./basisjs/src/devpanel/view/data-flow/view/flow.js');
 var buildTree = Flow.createTreeBuilder({
   sandbox: basis
 });
