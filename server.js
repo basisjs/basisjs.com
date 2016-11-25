@@ -8,7 +8,6 @@ require('basisjs-tools').server.command(null, {
     'html.js'
   ],
   rewrite: {
-    'host:jsclub.ru': 'http://basisjs.com [R301]',
     '^/(docs|demo|src|test|tour)(?:/(.*))?$': '/basisjs/$1/$2'
   }
 });
